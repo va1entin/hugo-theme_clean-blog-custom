@@ -1,0 +1,9 @@
+<!-- Use default author -->
+{{ $author := .Site.Params.default_author }}
+
+{{ if $.Param "author" }}
+    <!-- Page author exists -->
+    {{ $author = $.Param "author" }}
+{{ end }}
+
+{{ return ($author | plainify)}}

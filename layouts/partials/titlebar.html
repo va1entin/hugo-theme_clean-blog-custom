@@ -1,0 +1,67 @@
+<!-- Page Header -->
+{{ $header_image := $.Param "header_img" }}
+{{ if .IsHome }}
+  {{ $header_image = $.Param "header_img"  }}
+<!-- 404 page -->
+{{ else if eq .Page.Title "404 Page not found" }}
+  {{ $header_image = .Site.Params.fourofour_img  }}
+<!-- Taxonomy page -->
+{{ else if .IsNode }}
+  {{ if (index .Site.Params.taxonomy_header_imgs .Page.Title ) }}
+    {{ $header_image = (print "/img/tags/" (index .Site.Params.taxonomy_header_imgs .Page.Title)) }}
+  {{ end }}
+<!-- everything else -->
+{{ else }}
+  {{ $header_image = $.Param "header_img" }}
+{{ end }}
+<header class="masthead" style="background-image: url('{{ $header_image }}')">
+  <div class="overlay"></div>
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <!-- is a post -->
+          {{ if eq .Section "post" }}
+          <div class="post-heading">
+            <h1>{{ .Page.Title }}</h1>
+            <h2 class="subheading">{{ $.Param "subtitle" }}</h2>
+            <span class="meta">Posted by {{ $.Param "author" }} on {{ .Page.PublishDate.Format "January 2, 2006" }}</span>
+            {{ if $.Param "tags" }}
+            <span class="meta"> Tags:
+              {{ range $.Param "tags" }}
+              <a href="/tags/{{ . }}">
+                    <i class="fa fa-tag"></i>
+                    {{ . }}
+                  </a>
+                  {{ end }}
+                </span>
+                {{ end }}
+              </div>
+              {{ else }}
+              <!-- is not a post -->
+              <div class="site-heading">
+                <!-- Homepage -->
+                {{ if .IsHome }}
+                <h1>{{ .Page.Title }}</h1>
+                <span class="subheading">
+                  {{ if .Site.Params.featured_tags }}
+                  {{ range .Site.Params.featured_tags }}
+                  <a href="/tags/{{ . }}" style="text-decoration: normal; font-weight: normal; color: #ffffff;">
+                    <i class="fa fa-tag"></i>
+                    {{ . }}
+                  </a>
+                  {{ end }}
+                </span>
+                {{ end }}
+                <!-- Taxonomy page -->
+                {{ else if .IsNode }}
+                <h1>Tag: {{ .Page.Title }}</h1>
+            <!-- everything else -->
+            {{ else }}
+              <h1>{{ .Page.Title }}</h1>
+            {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+</header>

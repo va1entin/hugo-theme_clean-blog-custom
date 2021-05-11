@@ -1,0 +1,82 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            {{ if .Site.Params.footer.rss }}
+            <li class="list-inline-item">
+              <a href="/feed.xml" target="_blank">
+                  <span class="fa-stack fa-lg">
+                      <i class="far fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-rss fa-stack-1x"></i>
+                  </span>
+              </a>
+            </li>
+            {{ end }}
+            {{ if .Site.Params.footer.social.github_username }}
+            <li class="list-inline-item">
+              <a href="https://github.com/{{ .Site.Params.footer.social.github_username }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="far fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x"></i>
+                </span>
+              </a>
+            </li>
+            {{ end }}
+            {{ if .Site.Params.footer.social.gitlab_username }}
+          <li class="list-inline-item">
+            <a href="https://gitlab.com/{{ .Site.Params.footer.social.gitlab_username }}" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fab fa-gitlab fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.footer.social.linkedin_username }}
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/{{ .Site.Params.footer.social.linkedin_username }}" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.footer.social.xing_username }}
+          <li class="list-inline-item">
+            <a href="https://www.xing.com/profile/{{ .Site.Params.footer.social.xing_username }}" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fab fa-xing fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          {{ end }}
+          <p class="copyright text-muted">
+          {{ if .Site.Params.footer.since }}
+              <br>
+              <br>
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0 International</a> {{ .Site.Params.footer.copyright_name }} {{ .Site.Params.footer.since }} - {{ now.Format "2006" }}
+              <br>
+              This applies to the contents of my blog and other texts on this site only.
+              <br>
+              <a href="/terms-of-use">Terms of use</a>
+              <br>
+              Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+          {{ end }}
+          </p>
+          </ul>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>

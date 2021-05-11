@@ -1,0 +1,22 @@
+---
+title: Search
+description: Search
+header_img: /img/search-bg.webp
+aliases:
+  - search
+---
+<!-- CSS for search page -->
+<link id="search_css" href="/css/search.css" rel="stylesheet">
+
+<form id="search-form">
+<div class="search-bar">
+	<input type="text" id="search-input" placeholder="Enter keywords..." class="form-control input-lg" autocomplete="off" name="q" tabindex="0">
+</div>
+<br>
+	<ul id="search-results" class="" style="list-style-type: none;"></ul>
+</form>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js" crossorigin="anonymous"></script>
+<script src="/js/fixedsearch/fixedsearch.js"></script>
