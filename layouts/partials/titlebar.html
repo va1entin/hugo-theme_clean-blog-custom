@@ -52,9 +52,12 @@
                   {{ end }}
                 </span>
                 {{ end }}
+                <!-- 404 page -->
+                {{ else if eq .Page.Title "404 Page not found" }}
+                  <h1>{{ .Page.Title }}</h1>
                 <!-- Taxonomy page -->
                 {{ else if .IsNode }}
-                <h1>Tag: {{ .Page.Title }}</h1>
+                  <h1>Tag: {{ .Page.Title }}</h1>
             <!-- everything else -->
             {{ else }}
               <h1>{{ .Page.Title }}</h1>
