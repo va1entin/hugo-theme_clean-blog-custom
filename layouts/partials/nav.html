@@ -37,14 +37,14 @@
             </a>
           </li>
         {{ end }}
-        <!---
-        <li class="nav-item">
-          <a class="nav-link" title="About me" href="/about-me">
-            <span class="fas fa-user"></span>
-            <span> About</span>
-          </a>
-        </li>
-        --->
+        {{ if .Site.Params.aboutme }}
+          <li class="nav-item">
+            <a class="nav-link" title="About me" href="/about-me">
+              <span class="fas fa-user"></span>
+              <span> About me</span>
+            </a>
+          </li>
+        {{ end }}
       </ul>
     </div>
   </div>
