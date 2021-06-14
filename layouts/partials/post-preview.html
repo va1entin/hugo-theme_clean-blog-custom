@@ -1,12 +1,14 @@
+<!-- Post preview-->
 <div class="post-preview">
-    <a href="{{ .RelPermalink }}">
-        <h2 class="post-title">
-            {{ .Title }}
-        </h2>
-        <h3 class="post-subtitle">
-            {{ $.Param "subtitle" }}
-        </h3>
-    </a>
-    <p class="post-meta">Posted by {{ $.Param "author" }} on {{ .PublishDate.Format "January 2, 2006" }}</p>
+  <a href="{{ .RelPermalink }}">
+    <h2 class="post-title">
+      {{ .Title }}
+    </h2>
+    <h3 class="post-subtitle">
+      {{ $.Param "subtitle" }}
+    </h3>
+  </a>
+  <p class="post-meta">Posted by {{ $.Param "author" }} on {{ .PublishDate.Format "January 2, 2006" }}</p>
 </div>
-<hr>
+<!-- Divider-->
+<hr class="my-4" />

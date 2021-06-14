@@ -1,14 +1,14 @@
 {{ define "main" }}
-    {{ $pag := .Paginate (.Pages) }}
-    <div class="container">
-    <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        {{ range $index, $element := $pag.Pages }}
-            {{ partial "post-preview.html" . }}
-        {{ end }}
-        {{ partial "pagination.html" . }}
-    </div>
-    </div>
-    </div>
+  {{ $pag := .Paginate (.Pages) }}
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+    {{ range $index, $element := $pag.Pages }}
+      {{ partial "post-preview.html" . }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </div>
+  </div>
+  </div>
 {{ end }}
 
