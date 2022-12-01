@@ -54,6 +54,16 @@
           </a>
         </li>
         {{ end }}
+        {{ if and .Site.Params.footer.social.mastodon_instance .Site.Params.footer.social.mastodon_username }}
+        <li class="list-inline-item">
+          <a rel="me" href="https://{{ .Site.Params.footer.social.mastodon_instance }}/@{{ .Site.Params.footer.social.mastodon_username }}" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="far fa-circle fa-stack-2x"></i>
+              <i class="fab fa-mastodon fa-stack-1x"></i>
+            </span>
+          </a>
+        </li>
+        {{ end }}
         <div class="small text-center text-muted fst-italic">
         {{ if .Site.Params.footer.since }}
             <br>
