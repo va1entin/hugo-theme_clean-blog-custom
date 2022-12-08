@@ -23,7 +23,7 @@
           <div class="post-heading">
             <h1>{{ .Page.Title }}</h1>
             <h2 class="subheading">{{ $.Param "subtitle" }}</h2>
-            <span class="meta">Posted by {{ $.Param "author" }} on {{ .Page.PublishDate.Format "January 2, 2006" }}</span>
+            <span class="meta">Posted on {{ .Page.PublishDate.Format "January 2, 2006" }}</span>
             {{ if $.Param "tags" }}
             <span class="meta"> Tags:
               {{ range $.Param "tags" }}
