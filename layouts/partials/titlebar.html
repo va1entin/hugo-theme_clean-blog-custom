@@ -28,8 +28,7 @@
             <span class="meta"> Tags:
               {{ range $.Param "tags" }}
               <a href="/tags/{{ . }}">
-                    <i class="fa fa-tag"></i>
-                    {{ . }}
+                    #{{ . }}
                   </a>
                   {{ end }}
                 </span>
@@ -45,8 +44,7 @@
                   {{ if .Site.Params.featured_tags }}
                   {{ range .Site.Params.featured_tags }}
                   <a href="/tags/{{ . }}" style="text-decoration: normal; font-weight: normal; color: #ffffff;">
-                    <i class="fa fa-tag"></i>
-                    {{ . }}
+                    #{{ . }}
                   </a>
                   {{ end }}
                 </span>
@@ -56,7 +54,8 @@
                   <h1>{{ .Page.Title }}</h1>
                 <!-- Taxonomy page -->
                 {{ else if .IsNode }}
-                  <h1>Tag: {{ .Page.Title }}</h1>
+                  <h1>#{{ .Page.Title }}</h1>
+                  <h2 class="subheading">All tagged posts</h4>
             <!-- everything else -->
             {{ else }}
               <h1>{{ .Page.Title }}</h1>
