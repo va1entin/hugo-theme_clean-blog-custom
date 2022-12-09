@@ -5,20 +5,20 @@
 
         {{ range .Paginator.Pagers }}
             {{ if eq . $.Paginator }}
-                <a class='current btn btn-primary'>
+                <a class='current btn'>
                     {{- .PageNumber -}}
                 </a>
                 {{ else if or (or (eq . $.Paginator.First) (eq . $.Paginator.Prev)) (or  (eq . $.Paginator.Next) (eq . $.Paginator.Last )) }}
-                    <a class='btn btn-primary' href='{{ .URL }}'>
+                    <a class='btn' href='{{ .URL }}'>
                         {{- .PageNumber -}}
                     </a>
                 {{ else }}
                     {{ if and (not ($.Scratch.Get "hasPrevDots")) (lt .PageNumber $.Paginator.PageNumber)  }}
                         {{ $.Scratch.Set "hasPrevDots" true }}
-                        <a class='dots btn btn-primary'>&hellip;</a>
+                        <a class='dots btn'>&hellip;</a>
                     {{ else if and (not ($.Scratch.Get "hasNextDots")) (gt .PageNumber $.Paginator.PageNumber) }}
                         {{ $.Scratch.Set "hasNextDots" true }}
-                        <a class="dots btn btn-primary">&hellip;</a>
+                        <a class="dots btn">&hellip;</a>
                     {{ end }}
                 {{ end }}
             {{ end }}
