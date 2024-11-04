@@ -1,4 +1,4 @@
-# hugo-theme_clean-blog_enhanced
+# hugo-theme_clean-blog-custom
 
 ## Updating
 
