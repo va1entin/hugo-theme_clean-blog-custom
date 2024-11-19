@@ -39,7 +39,7 @@
               <div class="site-heading">
                 <!-- Homepage -->
                 {{ if .IsHome }}
-                <h1>{{ .Page.Title }}</h1>
+                <h1 class="only-on-mobile">{{ .Page.Title }}</h1>
                 <span class="subheading">
                   {{ if .Site.Params.featured_tags }}
                   {{ range .Site.Params.featured_tags }}
@@ -58,7 +58,7 @@
                   <h2 class="subheading">All tagged posts</h4>
             <!-- everything else -->
             {{ else }}
-              <h1>{{ .Page.Title }}</h1>
+              <h1 class="only-on-mobile">{{ .Page.Title }}</h1>
             {{ end }}
             </div>
           {{ end }}

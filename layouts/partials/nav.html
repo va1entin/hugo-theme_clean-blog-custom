@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto py-4 py-lg-0">
         <li class="nav-item">
-          <a class="nav-link px-lg-3 py-3 py-lg-4" title="Blog" href="/index.html">
+          <a class="nav-link px-lg-3 py-3 py-lg-4 {{ if or (eq .RelPermalink `/`) (hasPrefix .RelPermalink `/p/`) (hasPrefix .RelPermalink `/tags/`) }}active{{ end }}" title="Blog" href="/index.html">
             <span class="fa fa-book-open"></span>
             <span> Blog</span>
           </a>
@@ -41,7 +41,7 @@
         {{ end }}
         {{ if .Site.Params.nav.search }}
         <li class="nav-item">
-          <a href="/search/" class="nav-link px-lg-3 py-3 py-lg-4" title="Search">
+          <a href="/search/" class="nav-link px-lg-3 py-3 py-lg-4 {{ if eq .RelPermalink `/search/` }}active{{ end }}" title="Search">
             <span class="fa fa-search nav-search-icon"></span>
             <span> Search</span>
           </a>
@@ -49,7 +49,7 @@
         {{ end }}
         {{ if .Site.Params.nav.aboutme }}
           <li class="nav-item">
-            <a class="nav-link px-lg-3 py-3 py-lg-4" title="About me" href="/about-me">
+            <a class="nav-link px-lg-3 py-3 py-lg-4 {{ if eq .RelPermalink `/about-me/` }}active{{ end }}" title="About me" href="/about-me">
               <span class="fas fa-user"></span>
               <span> About me</span>
             </a>
