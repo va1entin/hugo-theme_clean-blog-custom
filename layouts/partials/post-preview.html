@@ -8,5 +8,5 @@
       {{ $.Param "subtitle" }}
     </h3>
   </a>
-  <p class="post-meta">Posted on {{ .PublishDate.Format "January 2, 2006" }}</p>
+  <p class="post-meta">Posted on {{ .PublishDate.Format .Site.Params.dateFormat.published }}</p>
 </div>

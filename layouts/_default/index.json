@@ -10,6 +10,6 @@
 				{{- $.Scratch.Set "date" (.Date.Format "2006-01-02") -}}
 			{{- end -}}
 	{{ end }}
-    {{- $index = $index | append (dict "title" ( .Title | plainify ) "author" .Params.author "permalink" .Permalink "tags" .Params.tags "date" (.Page.PublishDate.Format "January 2, 2006") ) -}}
+    {{- $index = $index | append (dict "title" ( .Title | plainify ) "author" .Params.author "permalink" .Permalink "tags" .Params.tags "date" (.Page.PublishDate.Format .Site.Params.dateFormat.published) ) -}}
 {{- end -}}
 {{- $index | jsonify -}}
