@@ -55,8 +55,15 @@
             This applies to the contents of my blog and other texts on this site only.
             <br>
             <a href="/terms-of-use">Terms of use</a>
-            <br>
-            Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            {{ if .Site.Params.footer.hugo_credit }}
+              <br>
+              <br>
+              Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            {{ end }}
+            {{ if .Site.Params.footer.theme_credit }}
+              <br>
+              Built with a <a href="https://github.com/va1entin/hugo-theme_clean-blog-custom" target="_blank">custom version</a> of the <a href="https://github.com/StartBootstrap/startbootstrap-clean-blog/" target="_blank">Clean Blog theme</a> by <a href="https://startbootstrap.com" target="_blank">StartBootstrap</a>
+            {{ end }}
         {{ end }}
         </div>
         </ul>
