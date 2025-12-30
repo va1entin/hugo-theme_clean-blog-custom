@@ -69,7 +69,7 @@ header.masthead .post-heading .meta {
 
 header.masthead {
   padding-top: calc(5rem + 30px);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   margin-bottom: 0rem;
 }
 
@@ -201,7 +201,7 @@ a:hover {
 
 @media (min-width: 992px) {
   .navbar-logo {
-    max-height: 15vh;
+    max-height: 12vh;
   }
   header.masthead {
     min-height: 17vh;
