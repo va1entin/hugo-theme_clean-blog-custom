@@ -23,14 +23,15 @@
           <div class="post-heading">
             <h1>{{ .Page.Title }}</h1>
             <h2 class="subheading">{{ $.Param "subtitle" }}</h2>
-            <span class="meta">Posted on {{ .Page.PublishDate.Format .Site.Params.dateFormat.published }}</span>
+            <span class="meta">Posted on {{ .Page.PublishDate.Format .Site.Params.dateFormat.published }}
             {{ if .Site.Params.post_age_warning_years }}
               {{ $postAgeWarningYears := .Site.Params.post_age_warning_years }} <!-- Can't use the parameter directly with AddDate so we need a variable -->
               {{ $thresholdDate := now.AddDate (int (mul -1 $postAgeWarningYears)) 0 0 }} <!-- Add threshold date to current date, multiply years from variable with -1 to get a negative value and cast as int because mul returns int64 -->
               {{ if .PublishDate.Before $thresholdDate }}
-                <span class="meta">Note that this post is older than {{ .Site.Params.post_age_warning_years }} years and might contain out-of-date information.</span>
+                ; this post is older than {{ .Site.Params.post_age_warning_years }} years and might contain out-of-date information.
               {{ end }}
             {{ end }}
+            </span>
             {{ if $.Param "tags" }}
             <span class="meta"> Tags:
               {{ range $.Param "tags" }}
