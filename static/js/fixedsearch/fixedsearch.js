@@ -175,9 +175,10 @@ fixedsearch = function(){
 		} else { // build our html
 			for (let item in results.slice(0,100)) { // only show first 5 results
 				// console.log(results[item].item.tags.join(', '))
+				let tags = results[item].item.tags || [];
 				search_items = search_items + '<li class="post-preview"><a href="' + results[item].item.permalink + '" tabindex="0">' +
 					'<h3 class="post-subtitle">' + results[item].item.title + '</h3></a>' +
-					'<p class="post-meta">' + 'Posted on ' + results[item].item.date + '<br>' + ' #' + results[item].item.tags.join(', #') + '</p>' +
+					'<p class="post-meta">' + 'Posted on ' + results[item].item.date + (tags.length ? '<br>' + ' #' + tags.join(', #') : '') + '</p>' +
 				'<hr class="my-4" /></li>';
 			}
 			results_available = true;
